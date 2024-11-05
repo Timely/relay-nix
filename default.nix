@@ -32,6 +32,7 @@ buildGoModule rec {
   doCheck = false;
 
   meta = with lib; {
+    mainProgram = "relayd";
     description = "Webhook Relay daemon";
     homepage = "https://github.com/webhookrelay/relay-go";
     license = licenses.mpl20;

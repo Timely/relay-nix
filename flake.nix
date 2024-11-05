@@ -18,7 +18,9 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        packages.default = pkgs.callPackage ./default.nix { };
+        packages.default = pkgs.callPackage ./default.nix {
+          inherit (pkgs) lib buildGoModule fetchFromGitHub;
+        };
 
         # Optionally add a development shell
         devShells.default = pkgs.mkShell {
